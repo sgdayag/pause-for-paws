@@ -227,6 +227,46 @@ style choice_button_text is default:
     properties gui.text_properties("choice_button")
 
 
+transform alpha_dissolve:
+    alpha 0.0
+    linear 0.5 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0
+
+screen countdown(choices):
+    $ renpy.block_rollback()
+    $ time = 10
+    $ timer_range = 10
+    $ random = renpy.random.choice(choices)
+    $ timer_jump = random
+    timer 0.01 repeat True action If(time > 0, true=SetVariable('time', time - 0.01), false=[Hide('countdown'), Jump(timer_jump)])
+    hbox:
+        xalign 0.0
+        yalign 0.65
+        spacing 0
+
+        bar:
+            style "center_bar_left"
+            value AnimatedValue(value=time, range=timer_range)
+
+        bar:
+            style "center_bar"
+            value AnimatedValue(value=time, range=timer_range)
+        
+
+style center_bar is bar:
+    xsize 960
+    ysize 16
+    left_bar Frame("gui/bar/left.png", 6, 0)
+    right_bar Frame("gui/bar/right.png", 6, 0)
+    thumb None
+
+style center_bar_left is center_bar:
+    left_bar Frame("gui/bar/right.png", 6, 0)
+    right_bar Frame("gui/bar/left.png", 6, 0)
+    bar_invert True
+
+
 ## Quick Menu screen ###########################################################
 ##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game

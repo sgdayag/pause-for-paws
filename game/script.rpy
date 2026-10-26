@@ -16,13 +16,17 @@ label start:
 
 label island_1:
 
+    show screen countdown(["choice_1a", "choice_1b"])
+
     menu:
         "Kai doesn't know whether to stay inside or go out."
 
         "Stay inside":
+            hide screen countdown
             jump choice_1a
             
         "Go outside":
+            hide screen countdown
             jump choice_1b
 
 
@@ -48,13 +52,17 @@ label choice_1b:
 
 label island_2:
 
+    show screen countdown(["choice_2b", "choice_2a"])
+
     menu:
         "The dog gets excited and starts becoming rougher. It grabs a toy and urges you to play."
 
         "Play with the dog":
+            hide screen countdown
             jump choice_2b
         
         "Stop and create distance":
+            hide screen countdown
             jump choice_2a
 
 
@@ -103,14 +111,18 @@ label island_2a:
 
 
 label island_2b:
+
+    show screen countdown(["choice_3a", "choice_2bb"])
     
     menu:
         "Kai inspects his wound.\n\nThere's no visible blood, only a red mark."
 
         "Clean the wound":
+            hide screen countdown
             jump choice_3a
         
         "Continue playing":
+            hide screen countdown
             jump choice_2bb
 
 
@@ -136,13 +148,17 @@ label choice_3b:
 
 label island_3:
 
+    show screen countdown(["choice_3a", "choice_3b"])
+
     menu:
         "Kai inspects his wound.\n\nThere's no visible blood, only a red mark."
 
         "Clean the wound":
+            hide screen countdown
             jump choice_3a
         
         "Do nothing":
+            hide screen countdown
             jump choice_3b
 
 
@@ -156,7 +172,7 @@ label island_4:
 
 
 label choice_4a:
-    
+
     """
     After deciding, he goes visits the clinic in the same day and receives treatment:
 
@@ -190,13 +206,17 @@ label choice_4b:
 
 label island_5:
 
+    show screen countdown(["choice_5a", "choice_5b"])
+
     menu:
         "Kai decides whether to visit ABC or go directly to the hospital."
         
         "Go to an Animal Bite Center (ABC)":
+            hide screen countdown
             jump choice_5a
         
         "Go to the hospital":
+            hide screen countdown
             jump choice_5b
         
 
@@ -218,13 +238,17 @@ label choice_5b:
 
 label island_6:
 
+    show screen countdown(["choice_6a", "choice_6b"])
+
     menu:
         "The ABC Personnel advises Kai regarding the next follow-up doses:\n   > Anti-rabies vaccine (2nd & 3rd doses)"
         
         "Mark the date and come back as scheduled":
+            hide screen countdown
             jump choice_6a
 
         "Skip the scheduled doses":
+            hide screen countdown
             jump choice_6b
 
 
@@ -250,13 +274,17 @@ label choice_6b:
 
 label island_6bb:
 
+    show screen countdown(["ending_3", "possibility_a", "possibility_b"])
+
     menu:
         "Kai is anxious because he doesn't know if the dog has rabies or not.\n\nAfter being advised by the ABC, he has to decide whether or not to observe the dog for 14 days for rabies signs."
 
         "Ignore the dog":
+            hide screen countdown
             jump ending_3
 
         "Observe the dog for rabies":
+            hide screen countdown
             $ possibilities = ["possibility_a", "possibility_b"]
             $ possibility = renpy.random.choice(possibilities)
             $ renpy.jump(possibility)
@@ -291,13 +319,17 @@ label possibility_b:
 
 label island_7:
 
+    show screen countdown(["choice_7a", "choice_7b"])
+
     menu:
         "Kai sees his household dog in their family's front yard."
 
         "Ignore it and go outside":
+            hide screen countdown
             jump choice_7a
 
         "Interact with the dog":
+            hide screen countdown
             jump choice_7b
 
 
@@ -321,13 +353,17 @@ label choice_7b:
 
 label island_8:
 
+    show screen countdown(["choice_8a", "choice_8b"])
+
     menu:
         "Suddenly, Kai sees the dog charging in his direction."
 
         "Kick the aggressive dog":
+            hide screen countdown
             jump choice_8a
 
         "Use an object (bag) to block the dog's attack":
+            hide screen countdown
             jump choice_8b
 
 
@@ -355,25 +391,33 @@ label choice_8b:
 
 label island_8aa:
 
+    show screen countdown(["choice_3a", "choice_8aaa"])
+
     menu:
         "Kai inspects his wound and has to make a decision quickly."
 
         "Clean the wound":
+            hide screen countdown
             jump choice_3a
 
         "Do nothing":
+            hide screen countdown
             jump choice_8aaa
 
 
 label island_8bb:
 
+    show screen countdown(["ending_5", "ending_6"])
+
     menu:
         "Kai has to decide whether to contact the authorities or not."
 
         "Ignore the dog":
+            hide screen countdown
             jump ending_5
 
         "Report the dog to the authorities":
+            hide screen countdown
             jump ending_6
 
 
@@ -388,13 +432,17 @@ label choice_8aaa:
 
 label island_9:
 
+    show screen countdown(["choice_9a", "choice_9b"])
+
     menu:
         "Kai decides to return inside his house and opens the front door.\n\nAn outside dog sees their indoor dog, becoming aggressive and readying itself to attack."
 
         "Close the gate immediately":
+            hide screen countdown
             jump choice_9a
 
         "Block the gate using his feet":
+            hide screen countdown
             jump choice_9b
 
 
@@ -420,13 +468,17 @@ label choice_9b:
 
 label island_10:
 
+    show screen countdown(["choice_8aaa", "choice_10a"])
+
     menu:
         "Kai carefully inspects his wound and decides whether to pay attention to his injury or not."
 
         "Do nothing":
+            hide screen countdown
             jump choice_8aaa
         
         "Clean the wound":
+            hide screen countdown
             jump choice_10a
     
 
@@ -441,13 +493,17 @@ label choice_10a:
 
 label island_12:
 
+    show screen countdown(["choice_4a", "choice_4b"])
+
     menu:
         "Kai decides whether to go to ABC immediately or not."
 
         "Dismiss the scratch":
+            hide screen countdown
             jump choice_4b
 
         "Go to an Animal Bite Center (ABC)":
+            hide screen countdown
             jump choice_4a
 
 
